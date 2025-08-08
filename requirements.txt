@@ -1,0 +1,90 @@
+# requirements.txt - Dependencies for Mutual Staring Detection System
+
+# Core computer vision and ML libraries
+opencv-python>=4.8.0
+ultralytics>=8.0.0
+numpy>=1.21.0
+
+# Face detection and pose estimation
+mediapipe>=0.10.0
+
+# Video processing and utilities
+Pillow>=9.0.0
+
+# Optional: For advanced tracking (if you want to replace the simple tracker)
+# deep-sort-realtime>=1.2.0
+# filterpy>=1.4.5
+
+# System utilities
+python-dateutil>=2.8.0
+
+# =============================================================================
+# INSTALLATION AND SETUP INSTRUCTIONS
+# =============================================================================
+
+# 1. Create a virtual environment (recommended):
+#    python -m venv stare_detection_env
+#    source stare_detection_env/bin/activate  # On Windows: stare_detection_env\Scripts\activate
+
+# 2. Install dependencies:
+#    pip install -r requirements.txt
+
+# 3. Create directory structure:
+#    Secret_couples/
+#    ├── head_detector.py
+#    ├── staring.py
+#    ├── utils/
+#    │   ├── __init__.py
+#    │   ├── pose_estimation.py
+#    │   └── tracker.py
+#    ├── VIDEOS/
+#    │   └── input_video.mp4  # Your video file here
+#    ├── STARE_FRAMES/  # Will be created automatically
+#    └── logs/  # Will be created automatically
+
+# 4. Update video path in head_detector.py:
+#    VIDEO_PATH = r"C:\Users\DELL\OneDrive\Documents\Secret_couples\VIDEOS\your_video.mp4"
+
+# 5. Run the system:
+#    python head_detector.py
+
+# 6. Controls during execution:
+#    - 'q': Quit
+#    - 'p': Pause/Resume
+#    - 'd': Show debug information
+
+# =============================================================================
+# SYSTEM REQUIREMENTS
+# =============================================================================
+
+# Hardware:
+# - CPU: Intel i5 or AMD Ryzen 5 (or better)
+# - RAM: 8GB minimum, 16GB recommended
+# - Storage: 2GB free space for models and output
+
+# Software:
+# - Python 3.8 or higher
+# - Windows 10/11, macOS 10.14+, or Ubuntu 18.04+
+# - Webcam or video files in common formats (MP4, AVI, MOV)
+
+# =============================================================================
+# TROUBLESHOOTING
+# =============================================================================
+
+# Issue: "No module named 'ultralytics'"
+# Solution: pip install ultralytics
+
+# Issue: "Failed to load YOLO model"
+# Solution: Ensure internet connection for initial model download
+
+# Issue: "MediaPipe face mesh failed"
+# Solution: pip install --upgrade mediapipe
+
+# Issue: Video file not found
+# Solution: Check VIDEO_PATH in head_detector.py
+
+# Issue: Low detection accuracy
+# Solution: Adjust CONFIDENCE_THRESHOLD in head_detector.py
+
+# Issue: Too many false positives
+# Solution: Increase stare_duration_sec or min_yaw_difference in staring.py
