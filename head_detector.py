@@ -4,6 +4,8 @@
 import cv2
 import numpy as np
 import os
+import subprocess
+import sys
 import time
 import math
 from datetime import datetime
@@ -17,7 +19,7 @@ from utils.pose_estimation import HeadPoseEstimator
 from utils.tracker import PersonTracker
 
 # ============= ENHANCED CONFIGURATION =============
-VIDEO_PATH = r"C:\Users\DELL\OneDrive\Documents\Secret_couples\VIDEOS\1.mp4"
+VIDEO_PATH = r"C:\Users\DELL\OneDrive\Documents\Secret_couples\VIDEOS\2.mp4"
 OUTPUT_DIR = r"C:\Users\DELL\OneDrive\Documents\Secret_couples\STARE_FRAMES"
 LOGS_DIR = r"C:\Users\DELL\OneDrive\Documents\Secret_couples\logs"
 
@@ -557,6 +559,8 @@ def main():
     
     input("\nPress Enter to exit...")
 
-
+website_script = os.path.join(os.path.dirname(__file__), "website.py")
+# Run website.py with the same Python interpreter
+subprocess.Popen([sys.executable, website_script])
 if __name__ == "__main__":
     main()
