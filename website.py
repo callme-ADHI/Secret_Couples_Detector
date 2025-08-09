@@ -444,8 +444,7 @@ class StareFrameWebsiteGenerator:
                 <div class="status-dot"></div>
                 <span class="status-text">Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</span>
             </div>
-            <h1>👁️ Mutual Staring Detection Feed</h1>
-            <p>Couple Spoted !!!</p>
+            <h1>👁️ COUPLE Spotted ! </h1>
         </div>
 
         <div class="controls">
