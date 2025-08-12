@@ -13,7 +13,7 @@
 - Member 2: Elsa Prasad - Muthoot Institute of Technology and Science
 
 ### Project Description
-A playful computer vision project that exposes “hidden romances” in a classroom. Using head pose estimation and gaze detection, the system identifies when two people stare at each other for over one second and captures the moment — frame by frame — for evidence.
+A playful computer vision project built specifically for classroom surveillance to uncover only the “secret” couples.By measuring the physical distance between detected students and combining it with head pose estimation & gaze detection, the system filters out random glances and catches only those who sit suspiciously close and stare at each other for over a second.The results are automatically deployed in a Streamlit web app, where the evidence is displayed — frame by frame — for maximum classroom gossip impact.
 
 ### The Problem (that doesn't exist)
 How do you scientifically prove who’s making googly eyes at whom during class without awkwardly staring at them yourself?
@@ -26,13 +26,21 @@ We built an AI snitch that watches the class, detects mutual stares, and saves t
 ### Technologies/Components Used
 For Software:
 - *Languages:* Python
-- *Frameworks:* OpenCV, Mediapipe, YOLOv8
+- *Frameworks:* OpenCV, Mediapipe, YOLOv8, Streamlit
 - *Libraries:* NumPy, Ultralytics, dlib, imutils
-- *Tools:* Roboflow (annotation & dataset), Jupyter/VSCode for development
+- *Tools:* VSCode 
 
 For Hardware:
 - None — this project is entirely software-based
 - Just a PC/Laptop with GPU (recommended for faster processing)
+
+##Algorithm
+- Person Detection (YOLOv8 : )Detects all students in the frame and marks their bounding boxes.
+- Head Pose Estimation (Mediapipe/dlib)Determines the yaw (left/right rotation) of each detected head.
+- Distance Filtering : Calculates the Euclidean distance between two people’s positions.Only pairs sitting within a set proximity threshold are considered potential couples.
+- Mutual Gaze Detection : Checks if both individuals in a close pair are facing each other for more than 1 second.
+- Evidence Capture : Saves the frame and tags the “caught” couple when conditions are met.
+- Streamlit Deployment : Publishes all caught moments in a live web dashboard for instant viewing.
 
 ### Implementation
 For Software:
