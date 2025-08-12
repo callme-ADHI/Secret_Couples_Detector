@@ -1,5 +1,5 @@
 # requirements.txt - Dependencies for Mutual Staring Detection System
-
+streamlit
 # Core computer vision and ML libraries
 opencv-python>=4.8.0
 ultralytics>=8.0.0
@@ -87,4 +87,5 @@ python-dateutil>=2.8.0
 # Solution: Adjust CONFIDENCE_THRESHOLD in head_detector.py
 
 # Issue: Too many false positives
+
 # Solution: Increase stare_duration_sec or min_yaw_difference in staring.py
